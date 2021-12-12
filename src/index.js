@@ -1,21 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Intro from "./component/intro/Intro"
-import About from "./component/about/About"
-import ProductList from "./component/productList/ProductList"
+import App from './App'
+import { ThemeProvider } from "./context"
 import './index.css';
 
-function App() {
-  return (
-    <>
-      <div><Intro/></div>
-      <div><About/></div>
-      <div><ProductList/></div>
-    </>
-  );
-}
+require('dotenv').config();
 
 ReactDOM.render(
-  <App />,
+  <ThemeProvider>
+    <App />  
+  </ThemeProvider>,
   document.getElementById('root')
 );
